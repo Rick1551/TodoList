@@ -1,12 +1,25 @@
 #include "TodoList.hpp"
+#include <iostream>
 
-Tarea tarea1{
-    1,
-    "Estudiar C++",
-    Prioridad::Alta,
-    false
-};
 
 void agregarTarea(const std::string& descripcion, Prioridad prio){
+        Tarea nueva{
+        1,
+        "Estudiar C++",
+        Prioridad::Alta,
+        false
+    };
+    tareas_.pushback(nueva);
+}
+
+void listarTareas(){
+    switch (tarea.prioridad)
+    {
+    case Prioridad::Baja:
+        std::cout << "[B]";
+        break;
     
+    default:
+        break;
+    }
 }
