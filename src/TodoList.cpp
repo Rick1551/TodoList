@@ -9,11 +9,11 @@ void agregarTarea(const std::string& descripcion, Prioridad prio){
         Prioridad::Alta,
         false
     };
-    tareas_.pushback(nueva);
+    //tareas_.pushback(nueva);
 }
 
 void listarTareas(){
-    switch (tarea.prioridad)
+    switch (Prioridad::Baja)
     {
     case Prioridad::Baja:
         std::cout << "[B]";

@@ -17,5 +17,10 @@ int main(){
         //Switch
 
     } while (opcion != 4);
+
+    lista.agregarTarea("Estudiar C++", Prioridad::Alta);
+ 
+    lista.listarTareas();
+
     return 0;
 }
