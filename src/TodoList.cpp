@@ -27,5 +27,5 @@ void TodoList::listarTareas() const{
 }
 
 void TodoList::marcarCompletada(int id){
-    tareas_[id+1].completada = true;
+    tareas_[id-1].completada = true;
 }

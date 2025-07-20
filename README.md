@@ -9,12 +9,13 @@ Este proyecto implementa una sencilla **aplicación de consola en C++** para ges
 - Mostrar tareas con todos sus detalles
 - Código organizado en archivos `.hpp` y `.cpp` separados
 
-## 🧱 Estructura del proyecto
-
-📁 TodoList/
-├── src/
-│ ├── main.cpp
-│ ├── TodoList.cpp
-│ └── TodoList.hpp
-├── README.md
-└── (opcional) CMakeLists.txt
+## Estructura del Proyecto
+📦 proyecto_todo_list
+├── 📂 include
+│ └── 📄 TodoList.hpp # Declaración de la clase
+├── 📂 src
+│ ├── 📄 main.cpp # Punto de entrada
+│ └── 📄 TodoList.cpp # Implementación
+├── 📄 CMakeLists.txt # Configuración de CMake
+├── 📄 .gitignore # Archivos ignorados
+└── 📄 README.md # Este archivo
