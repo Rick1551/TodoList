@@ -1,25 +1,18 @@
-#include "TodoList.hpp"
+#include "../include/TodoList.hpp"
 #include <iostream>
 
 
-void agregarTarea(const std::string& descripcion, Prioridad prio){
-        Tarea nueva{
-        1,
-        "Estudiar C++",
-        Prioridad::Alta,
-        false
-    };
-    //tareas_.pushback(nueva);
+void TodoList::agregarTarea(const std::string& descripcion, Prioridad prio){
+        Tarea nueva{1,descripcion,prio,false};
+
+		tareas_.push_back(nueva);
+        std::cout << "Tarea agregada con ID: " << nueva.id << "\n";
 }
 
-void listarTareas(){
-    switch (Prioridad::Baja)
-    {
-    case Prioridad::Baja:
-        std::cout << "[B]";
-        break;
-    
-    default:
-        break;
-    }
+void TodoList::listarTareas() const{
+
+}
+
+void TodoList::marcarCompletada(int id){
+    tareas_[id].completada = true;
 }

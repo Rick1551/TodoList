@@ -12,12 +12,13 @@ struct Tarea{
 };
 
 class TodoList {
+    private:
+        std::vector<Tarea> tareas_;
+        int siguiente_id_ = 1;
+
     public:
         void agregarTarea(const std::string& descripcion, Prioridad prio);
         void listarTareas() const;
         void marcarCompletada(int id);
 
-    private:
-        std::vector<Tarea> tareas_;
-        int siguiente_id_ = 1;
 };
