@@ -1,6 +1,14 @@
 #include <iostream>
 #include "../include/TodoList.hpp"
 
+void clearScreen() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
 int main(){
     TodoList lista;
     int opcion;
@@ -16,33 +24,36 @@ int main(){
 
         switch(opcion) {
             case 1: {
-            std::string descripcion;
-            int prio;
-            Prioridad prioridad;
+                clearScreen();
+                std::string descripcion;
+                int prio;
+                Prioridad prioridad;
 
-            std::cin.ignore(); //Limpiar el buffer antes de gettline
-            std::cout << "Descripcion: ";
-            std::getline(std::cin, descripcion);
+                std::cin.ignore(); //Limpiar el buffer antes de gettline
+                std::cout << "Descripcion: ";
+                std::getline(std::cin, descripcion);
 
-            std::cout << "Prioridad (0: Baja, 1: Media, 2: Alta: )";
-            std::cin >> prio;
+                std::cout << "Prioridad (0: Baja, 1: Media, 2: Alta: )";
+                std::cin >> prio;
 
-            //Validar prioridad
-            if(prio < 0 || prio > 2){
-                std::cout << "Prioridad invalidad. Usando prioridad baja por defecto. \n";
-                prioridad = Prioridad::Baja;
-            }else {
-                prioridad = static_cast<Prioridad>(prio);
-            }
-                lista.agregarTarea(descripcion, prioridad);
-                break;
-            }
+                //Validar prioridad
+                if(prio < 0 || prio > 2){
+                    std::cout << "Prioridad invalidad. Usando prioridad baja por defecto. \n";
+                    prioridad = Prioridad::Baja;
+                }else {
+                    prioridad = static_cast<Prioridad>(prio);
+                }
+                    lista.agregarTarea(descripcion, prioridad);
+                    break;
+                }
 
             case 2:
+                clearScreen();
                 lista.listarTareas();
                 break;
 
             case 3: {
+                clearScreen();
                 int id;
                 std::cout << "ID de la tarea a marcar como completada: ";
                 std::cin >> id;
@@ -51,6 +62,7 @@ int main(){
             }
 
             case 4:
+                clearScreen();
                 std::cout << "Saliendo...\n";
                 break;
 
