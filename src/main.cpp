@@ -15,7 +15,7 @@ int main(){
         std::cin >> opcion;
 
         switch(opcion) {
-            case 1:
+            case 1: {
             std::string descripcion;
             int prio;
             Prioridad prioridad;
@@ -36,11 +36,29 @@ int main(){
             }
                 lista.agregarTarea(descripcion, prioridad);
                 break;
+            }
+
+            case 2:
+                lista.listarTareas();
+                break;
+
+            case 3: {
+                int id;
+                std::cout << "ID de la tarea a marcar como completada: ";
+                std::cin >> id;
+                lista.marcarCompletada(id);
+                break;
+            }
+
+            case 4:
+                std::cout << "Saliendo...\n";
+                break;
+
+            default:
+                std::cout<< "Opcion invalida. \n";    
         }
 
     } while (opcion != 4);
-
-    lista.listarTareas();
 
     return 0;
 }
